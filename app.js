@@ -96,7 +96,7 @@ function generateByteArray() {
 			if (!temp) temp = 0;
 			// Row Major or Column Major?
 			if (!rowMajor) {
-				buffer[x * height + y] = temp;	
+				buffer[ (y % 8) + (Math.floor(y / 8) * 8 * width) + (x * 8) ] = temp	
 			}
 			else {
 				buffer[y * width + x] = temp;
